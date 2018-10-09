@@ -1,20 +1,22 @@
 //
-//  ViewController.swift
-//  Practica678
+//  UserViewController.swift
+//  Practica 678
 //
-//  Created by MTI on 25/09/18.
-//  Copyright © 2018 MTI. All rights reserved.
-//
+//  Created by OscarVago 25/09/18.
+//  Copyright © 2018 DosDesign. All rights reserved.
 
 import UIKit
+
+
+
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
     var usuarios = [Usuario]()
-    var usuario = usuario?
-    var user = user?
+    var usuario: Usuario?
+    
     
     override func viewDidLoad() {
      
@@ -39,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     print(json)
                     //llenado contenedor local (usuarios)
                     
-                    for element in json{
+                    for user in json{
                         let name = user["name"] as! String
                         let email = user["email"] as! String
                         let phone = user["phone"] as! String
@@ -78,10 +80,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "usuario")
         
-        cell?.textLabel?.text = usuarios[indexPath.row]
-        
+        cell?.textLabel?.text = usuarios[indexPath.row].name
+        cell?.textLabel?.text = usuarios[indexPath.row].email
         
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        usuario = usuarios[indexPath.row]
+        performSegue(withIdentifier: "Detail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! UserViewController
+        destination.usuario = self.usuario
     }
 }
 class Usuario {
