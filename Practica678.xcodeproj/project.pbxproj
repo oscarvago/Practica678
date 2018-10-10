@@ -15,6 +15,7 @@
 		4E9313F3215B0BE200BE19A5 /* Practica678Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9313F2215B0BE200BE19A5 /* Practica678Tests.swift */; };
 		4E9313FE215B0BE200BE19A5 /* Practica678UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9313FD215B0BE200BE19A5 /* Practica678UITests.swift */; };
 		4E93140C215B22B400BE19A5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E93140B215B22B400BE19A5 /* UserViewController.swift */; };
+		C96F740B216E640B00C559BF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F740A216E640B00C559BF /* MapKit.framework */; };
 		C976408D216D5A8E006618F5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C976408C216D5A8E006618F5 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		4E9313FD215B0BE200BE19A5 /* Practica678UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practica678UITests.swift; sourceTree = "<group>"; };
 		4E9313FF215B0BE200BE19A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E93140B215B22B400BE19A5 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		C96F740A216E640B00C559BF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C976408C216D5A8E006618F5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96F740B216E640B00C559BF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				4E9313F1215B0BE200BE19A5 /* Practica678Tests */,
 				4E9313FC215B0BE200BE19A5 /* Practica678UITests */,
 				4E9313DB215B0BDF00BE19A5 /* Products */,
+				C96F7409216E640B00C559BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +133,14 @@
 				4E9313FF215B0BE200BE19A5 /* Info.plist */,
 			);
 			path = Practica678UITests;
+			sourceTree = "<group>";
+		};
+		C96F7409216E640B00C559BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C96F740A216E640B00C559BF /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +212,11 @@
 					4E9313D9215B0BDF00BE19A5 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4E9313ED215B0BE200BE19A5 = {
 						CreatedOnToolsVersion = 9.2;
